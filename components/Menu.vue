@@ -14,7 +14,7 @@
         items-center
       "
     >
-      <img src="../static/tx-1.png" alt="" class="w-50px" />
+      <img src="../static/tx-1.png" alt="home" class="w-50px" />
       <div class="flex justify-evenly">
         <a
           v-for="item of menus"

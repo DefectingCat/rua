@@ -1,9 +1,5 @@
 <template>
   <div>
-    <no-ssr>
-      <Particles id="tsparticles" class="absolute -z-10" :options="option" />
-    </no-ssr>
-
     <div class="h-screen">
       <Menu />
       <div
@@ -11,11 +7,10 @@
       >
         <h1
           class="
-            xl:text-7xl
+            xl:text-7xl xl:font-900 xl:leading-snug
             md:text-6xl
             sm:text-5xl
             text-5xl
-            xl:font-900 xl:leading-snug
             leading-tight
             font-700
           "
@@ -32,7 +27,6 @@
 <script lang="ts">
 import { defineComponent, nextTick, onMounted } from '@nuxtjs/composition-api';
 import Typed from 'typed.js';
-import option from './particles.conf';
 
 export default defineComponent({
   name: 'Home',
@@ -49,10 +43,6 @@ export default defineComponent({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const typed = new Typed('.typed', options);
     });
-
-    return {
-      option,
-    };
   },
 });
 </script>

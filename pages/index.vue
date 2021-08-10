@@ -1,5 +1,9 @@
 <template>
-  <Home class="text-gray-800" />
+  <div class="text-gray-800">
+    <ParticlesBase />
+    <Home />
+    <Bio />
+  </div>
 </template>
 
 <script lang="ts">
