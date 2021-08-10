@@ -47,8 +47,8 @@ export default defineComponent({
       },
       {
         id: 2,
-        href: 'https://www.github.com',
-        name: 'Github',
+        href: 'https://git.defectink.com',
+        name: 'Gitea',
       },
     ]);
 
