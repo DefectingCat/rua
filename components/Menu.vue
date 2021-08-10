@@ -21,7 +21,7 @@
           :key="item.id"
           :href="item.href"
           target="_blank"
-          class="sm:mx-4 mx-2"
+          class="sm:mx-4 mx-2 font-bold"
           >{{ item.name }}</a
         >
       </div>
