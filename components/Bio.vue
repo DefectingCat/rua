@@ -1,8 +1,7 @@
 <template>
   <div
     class="
-      bg-light-200
-      rounded-xl
+      bg-light-50
       grid grid-cols-12
       gap-x-16
       items-center

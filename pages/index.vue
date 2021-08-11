@@ -3,6 +3,7 @@
     <ParticlesBase />
     <Home />
     <Bio />
+    <Projects />
   </div>
 </template>
 
