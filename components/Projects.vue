@@ -1,23 +1,21 @@
 <template>
-  <div class="project">
-    <div class="grid grid-cols-12 gap-x-8 p-4">
-      <div class="col-span-2"></div>
-      <h2 class="col-span-8 font-zh font-500 text-5xl my-12">
-        项目/<span class="text-3xl">Projects</span>
-      </h2>
-      <div class="col-span-2"></div>
-    </div>
+  <div class="project pb-8">
+    <CardTitle title="项目" sub-title="Projects" />
 
     <div
       v-for="(project, index) in projects"
-      :key="project + index"
-      class="grid grid-cols-12 gap-x-8 p-4"
+      :key="`${project} ${index}`"
+      class="grid grid-cols-12 gap-x-8 p-4 <sm:gap-x-0 <sm:gap-y-8"
     >
-      <div class="col-span-2"></div>
-      <div v-for="item of project" :key="item.img" class="col-span-4">
+      <div class="col-span-2 <sm:hidden"></div>
+      <div
+        v-for="item of project"
+        :key="item.img"
+        class="col-span-4 <sm:col-span-12"
+      >
         <ProjectCard v-bind="item" />
       </div>
-      <div class="col-span-2"></div>
+      <div class="col-span-2 <sm:hidden"></div>
     </div>
   </div>
 </template>
@@ -25,43 +23,17 @@
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api';
 import ProjectCard from './projects/ProjectCard.vue';
+import CardTitle from './common/CardTitle.vue';
+import projectInfo from './projectInfo';
 
 export default defineComponent({
   name: 'Projects',
   components: {
+    CardTitle,
     ProjectCard,
   },
   setup() {
-    const projects = reactive([
-      [
-        {
-          repo: 'Github',
-          title: 'Notedly',
-          img: '',
-          desc: 'This is a test',
-        },
-        {
-          repo: 'Github',
-          title: 'Notedly',
-          img: '',
-          desc: 'This is a test',
-        },
-      ],
-      [
-        {
-          repo: 'Github',
-          title: 'Notedly',
-          img: '',
-          desc: 'This is a test',
-        },
-        {
-          repo: 'Github',
-          title: 'Notedly',
-          img: '',
-          desc: 'This is a test',
-        },
-      ],
-    ]);
+    const projects = reactive(projectInfo);
 
     return {
       projects,
