@@ -1,5 +1,5 @@
 <template>
-  <div class="project pb-8">
+  <div class="project pb-10">
     <CardTitle title="项目" sub-title="Projects" />
 
     <div
@@ -24,7 +24,7 @@
 import { defineComponent, reactive } from '@nuxtjs/composition-api';
 import ProjectCard from './projects/ProjectCard.vue';
 import CardTitle from './common/CardTitle.vue';
-import projectInfo from './projectInfo';
+import projectInfo from '@/assets/projectInfo';
 
 export default defineComponent({
   name: 'Projects',

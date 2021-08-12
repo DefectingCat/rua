@@ -2,13 +2,12 @@
   <div class="grid grid-cols-12 gap-x-8 p-4">
     <div class="col-span-2"></div>
     <h2
-      class="
+      :class="`
         col-span-8
         font-zh font-500
         text-5xl
         my-8
-        <sm:text-4xl <sm:text-center
-      "
+        <sm:text-${fontSize} <sm:text-center`"
     >
       {{ title }}/<span class="text-2xl">{{ subTitle }}</span>
     </h2>
@@ -23,6 +22,10 @@ export default defineComponent({
   props: {
     title: String as PropType<string>,
     subTitle: String as PropType<string>,
+    fontSize: {
+      type: String as PropType<string>,
+      default: '4xl',
+    },
   },
   setup() {},
 });

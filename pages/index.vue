@@ -4,6 +4,8 @@
     <Home />
     <Bio />
     <Projects />
+    <Wakatime />
+    <blog-posts />
   </div>
 </template>
 
@@ -12,3 +14,5 @@ import Vue from 'vue';
 
 export default Vue.extend({});
 </script>
+
+BlogPosts
