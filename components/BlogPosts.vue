@@ -1,24 +1,69 @@
 <template>
-  <div class="blog">
+  <div ref="blog" class="blog pb-4">
     <CardTitle title="博客" sub-title="Blog posts" />
+
+    <div class="grid grid-cols-12 gap-x-8">
+      <div class="col-span-2 col-start-1 row-span-4"></div>
+      <BlogCard
+        v-for="post of posts"
+        :key="post.url"
+        v-bind="post"
+        class="col-span-4 mb-8"
+      />
+      <div class="col-span-2 col-start-11 row-span-4"></div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-x-8">
+      <div class="col-span-2"></div>
+      <button class="btn card col-span-8 outline-none" @click="toBlog">
+        Read More
+      </button>
+      <div class="col-span-2"></div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, ref } from '@nuxtjs/composition-api';
+import BlogCard from './blog/BlogCard.vue';
 import CardTitle from './common/CardTitle.vue';
+import usePosts from '@/hooks/usePosts';
+import config from '@/config/backendConfig';
 
 export default defineComponent({
   name: 'BlogPosts',
   components: {
     CardTitle,
+    BlogCard,
   },
-  setup() {},
+  setup() {
+    const blog = ref<HTMLElement>();
+    const { posts } = usePosts();
+
+    // 目前由服务端直接加载
+    // onMounted(() => {
+    //   const intersectionObserver = new IntersectionObserver(function (entries) {
+    //     if (entries[0].intersectionRatio <= 0) return;
+    //     fetchPost();
+    //   });
+    //   blog.value && intersectionObserver.observe(blog.value);
+    // });
+
+    return {
+      blog,
+      posts,
+      blogURL: config.blogURL,
+      toBlog: () => window.open(config.blogURL),
+    };
+  },
 });
 </script>
 
 <style scoped lang="scss">
 .blog {
   background-color: #f5f7f9;
+}
+.btn {
+  @apply h-14 w-34 rounded-4xl bg-gradient-to-tr from-green-300 to-blue-300;
 }
 </style>

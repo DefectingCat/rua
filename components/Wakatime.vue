@@ -7,16 +7,12 @@
       <!-- @TODO 后端缓存 -->
       <div class="col-span-4 <sm:col-span-12">
         <figure>
-          <embed
-            src="https://wakatime.com/share/@Defectink/e111bc66-8713-4893-8be6-cb8bb58708b6.svg"
-          />
+          <embed :src="waka1" />
         </figure>
       </div>
       <div class="col-span-4 <sm:col-span-12">
         <figure>
-          <embed
-            src="https://wakatime.com/share/@Defectink/e3f4e052-2ffb-4e8f-84fb-c57fb6092801.svg"
-          />
+          <embed :src="waka2" />
         </figure>
       </div>
       <div class="col-span-2 <sm:hidden"></div>
@@ -27,13 +23,19 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
 import CardTitle from './common/CardTitle.vue';
+import backend from '@/config/backendConfig';
 
 export default defineComponent({
   name: 'Wakatime',
   components: {
     CardTitle,
   },
-  setup() {},
+  setup() {
+    return {
+      waka1: backend.waka1,
+      waka2: backend.waka2,
+    };
+  },
 });
 </script>
 

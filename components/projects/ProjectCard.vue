@@ -31,11 +31,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
-.card {
-  box-shadow: 0 0 6px 0 rgb(30 45 62 / 9%);
-}
-.card:hover {
-  box-shadow: 0 10px 15px 0 rgb(30 45 62 / 4%), 0 0 50px 0 rgb(31 44 60 / 5%);
-}
-</style>
+<style scoped lang="scss"></style>

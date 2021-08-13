@@ -32,7 +32,14 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios'],
+
+  axios: {
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://api.defectink.com/api/rua'
+        : 'http://127.0.0.1:4000', // Used as fallback if no runtime config is provided
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
