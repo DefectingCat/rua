@@ -3,7 +3,7 @@
     <CardTitle title="项目" sub-title="Projects" />
 
     <div
-      v-for="(project, index) in projects"
+      v-for="(project, index) in projectInfo"
       :key="`${project} ${index}`"
       class="grid grid-cols-12 gap-x-8 p-4 <sm:gap-x-0 <sm:gap-y-8"
     >
@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@nuxtjs/composition-api';
+import { defineComponent } from '@nuxtjs/composition-api';
 import ProjectCard from './projects/ProjectCard.vue';
 import CardTitle from './common/CardTitle.vue';
 import projectInfo from '@/assets/projectInfo';
@@ -33,10 +33,8 @@ export default defineComponent({
     ProjectCard,
   },
   setup() {
-    const projects = reactive(projectInfo);
-
     return {
-      projects,
+      projectInfo,
     };
   },
 });

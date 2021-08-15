@@ -4,7 +4,6 @@
 
     <div class="grid grid-cols-12 gap-x-8 p-4 <sm:gap-x-0 <sm:gap-y-8">
       <div class="col-span-2 <sm:hidden"></div>
-      <!-- @TODO 后端缓存 -->
       <div class="col-span-4 <sm:col-span-12">
         <figure>
           <embed :src="waka1" />

@@ -1,8 +1,20 @@
 <template>
-  <div ref="blog" class="blog pb-4">
+  <div ref="blog" class="blog pb-8">
     <CardTitle title="博客" sub-title="Blog posts" />
 
-    <div class="grid grid-cols-12 gap-x-8">
+    <!-- 在数据未到之前，需要遍历 6 次来创建 loading -->
+    <div v-if="posts == null" class="grid grid-cols-12 gap-x-8">
+      <div class="col-span-2 col-start-1 row-span-4"></div>
+      <BlogCard
+        v-for="post of 6"
+        :key="post"
+        :loading="true"
+        class="col-span-4 mb-8"
+      />
+      <div class="col-span-2 col-start-11 row-span-4"></div>
+    </div>
+
+    <div v-else class="grid grid-cols-12 gap-x-8">
       <div class="col-span-2 col-start-1 row-span-4"></div>
       <BlogCard
         v-for="post of posts"
@@ -38,16 +50,7 @@ export default defineComponent({
   },
   setup() {
     const blog = ref<HTMLElement>();
-    const { posts } = usePosts();
-
-    // 目前由服务端直接加载
-    // onMounted(() => {
-    //   const intersectionObserver = new IntersectionObserver(function (entries) {
-    //     if (entries[0].intersectionRatio <= 0) return;
-    //     fetchPost();
-    //   });
-    //   blog.value && intersectionObserver.observe(blog.value);
-    // });
+    const { posts } = usePosts(blog);
 
     return {
       blog,
