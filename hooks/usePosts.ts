@@ -1,4 +1,5 @@
-import { ref, Ref, onMounted } from '@nuxtjs/composition-api';
+import { ref, Ref, onMounted, nextTick } from '@nuxtjs/composition-api';
+import useLazyload from './useLazyload';
 import useAxios from '@/hooks/useAxios';
 
 export interface Post {
@@ -28,20 +29,9 @@ const usePosts = (target: Ref<HTMLElement | undefined>) => {
    * observe post对应的 DOM
    * 当其出现在视口时，发送获取文章请求
    */
-  onMounted(() => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries, observer) => {
-        if (entries[0].intersectionRatio <= 0) return;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            fetchPost();
-            observer.unobserve(entry.target); // 加载后取消 observe，避免重复发送请求
-          }
-        });
-      }
-    );
-    target.value && intersectionObserver.observe(target.value);
+  onMounted(async () => {
+    await nextTick();
+    useLazyload(target.value, fetchPost); // observer
   });
 
   return {

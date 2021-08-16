@@ -1,36 +1,37 @@
 <template>
   <div ref="blog" class="blog pb-8">
     <CardTitle title="博客" sub-title="Blog posts" />
-
-    <!-- 在数据未到之前，需要遍历 6 次来创建 loading -->
-    <div v-if="posts == null" class="grid grid-cols-12 gap-x-8">
-      <div class="col-span-2 col-start-1 row-span-4"></div>
-      <BlogCard
-        v-for="post of 6"
-        :key="post"
-        :loading="true"
-        class="col-span-4 mb-8"
-      />
-      <div class="col-span-2 col-start-11 row-span-4"></div>
+    <div class="grid grid-cols-12 gap-x-8 p-4 <sm:gap-x-0">
+      <div class="col-span-2 col-start-1 row-span-4 <sm:hidden"></div>
+      <!-- 在数据未到之前，需要遍历 6 次来创建 loading -->
+      <template v-if="posts == null">
+        <BlogCard
+          v-for="post of 6"
+          :key="post"
+          :loading="true"
+          class="col-span-4 mb-8 <sm:col-span-12"
+        />
+      </template>
+      <template v-else>
+        <BlogCard
+          v-for="post of posts"
+          :key="post.url"
+          v-bind="post"
+          class="col-span-4 mb-8 <sm:col-span-12"
+        />
+      </template>
+      <div class="col-span-2 col-start-11 row-span-4 <sm:hidden"></div>
     </div>
 
-    <div v-else class="grid grid-cols-12 gap-x-8">
-      <div class="col-span-2 col-start-1 row-span-4"></div>
-      <BlogCard
-        v-for="post of posts"
-        :key="post.url"
-        v-bind="post"
-        class="col-span-4 mb-8"
-      />
-      <div class="col-span-2 col-start-11 row-span-4"></div>
-    </div>
-
-    <div class="grid grid-cols-12 gap-x-8">
-      <div class="col-span-2"></div>
-      <button class="btn card col-span-8 outline-none" @click="toBlog">
+    <div class="grid grid-cols-12 gap-x-8 <sm:gap-x-0 p-4">
+      <div class="col-span-2 <sm:hidden"></div>
+      <button
+        class="btn card col-span-8 outline-none <sm:col-span-12"
+        @click="toBlog"
+      >
         Read More
       </button>
-      <div class="col-span-2"></div>
+      <div class="col-span-2 <sm:hidden"></div>
     </div>
   </div>
 </template>

@@ -5,7 +5,8 @@
     <Bio />
     <Projects />
     <Wakatime />
-    <blog-posts />
+    <BlogPosts />
+    <Heatmap />
   </div>
 </template>
 

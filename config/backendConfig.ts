@@ -1,5 +1,6 @@
 export default {
   blogURL: 'https://www.defectink.com',
+  heatmap: 'https://ghchart.rshah.org/409ba5/defectingcat',
   backendURL:
     process.env.NODE_ENV === 'production'
       ? 'https://api.defectink.com/api/rua'

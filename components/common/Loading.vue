@@ -1,5 +1,5 @@
 <template>
-  <div id="loading-cat">
+  <div id="loading-cat" class="flex justify-center items-center">
     <svg
       width="200px"
       height="200px"

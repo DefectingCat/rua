@@ -24,7 +24,7 @@
         <div class="p-8">
           <div class="flex justify-between">
             <h2 class="text-2xl">{{ title }}</h2>
-            <span class="text-gray-300">{{ time }}</span>
+            <span class="text-gray-300 <sm:hidden">{{ time }}</span>
           </div>
 
           <div class="mt-4">

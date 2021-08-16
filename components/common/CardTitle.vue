@@ -9,7 +9,7 @@
         my-8
         <sm:text-${fontSize} <sm:text-center`"
     >
-      {{ title }}/<span class="text-2xl">{{ subTitle }}</span>
+      {{ title }}<span class="text-2xl <sm:hidden">/{{ subTitle }}</span>
     </h2>
     <div class="col-span-2"></div>
   </div>
