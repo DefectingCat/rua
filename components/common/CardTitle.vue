@@ -4,7 +4,7 @@
     <h2
       :class="`
         col-span-8
-        font-zh font-500
+font-500
         text-5xl
         my-8
         <sm:text-${fontSize} <sm:text-center`"

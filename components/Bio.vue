@@ -32,7 +32,6 @@
         col-span-4
         <sm:row-start-2 <sm:col-start-5 <sm:justify-center
         flex
-        font-zh
         text-lg
       "
     >

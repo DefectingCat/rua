@@ -8,7 +8,7 @@
         <div class="mb-3 text-gray-400">
           <span class="">{{ repo }}</span>
         </div>
-        <h4 class="font-zh font-500 text-3xl">{{ title }}</h4>
+        <h4 class="font-500 text-3xl">{{ title }}</h4>
         <p class="mt-4 min-h-12">{{ desc }}</p>
       </div>
     </a>

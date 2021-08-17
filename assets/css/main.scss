@@ -1,7 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 
-html {
+/* @font-face {
+  font-family: 'Noto Sans JP';
+  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Regular.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Regular.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Regular.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Regular.woff') format('woff');
+  // src: url('@/static/fonts/NotoSansJP-Regular.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Medium.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Medium.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Medium.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Medium.woff') format('woff');
+  // src: url('@/static/fonts/NotoSansJP-Medium.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Bold.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Bold.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Bold.woff2');
+  // src: url('@/static/fonts/NotoSansJP-Bold.woff') format('woff');
+  // src: url('@/static/fonts/NotoSansJP-Bold.ttf');
+  // src: url('@/static/fonts/NotoSansJP-Bold.otf');
+  font-weight: 700;
+} */
+
+*,
+html,
+body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 

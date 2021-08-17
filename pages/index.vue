@@ -7,6 +7,8 @@
     <Wakatime />
     <BlogPosts />
     <Heatmap />
+    <Footer />
+    <FooterWidget />
   </div>
 </template>
 
