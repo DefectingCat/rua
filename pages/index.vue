@@ -7,6 +7,7 @@
     <Wakatime />
     <BlogPosts />
     <Heatmap />
+    <CatchMe />
     <Footer />
     <FooterWidget />
   </div>

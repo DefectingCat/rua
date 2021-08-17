@@ -2,41 +2,59 @@
 
 /* @font-face {
   font-family: 'Noto Sans JP';
-  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Regular.ttf');
+  src: url(https://cdn.defectink.com/fonts/NotoSansJP-Regular.ttf);
   // src: url('@/static/fonts/NotoSansJP-Regular.woff2');
   // src: url('@/static/fonts/NotoSansJP-Regular.woff2');
   // src: url('@/static/fonts/NotoSansJP-Regular.woff') format('woff');
   // src: url('@/static/fonts/NotoSansJP-Regular.ttf');
   // src: url('@/static/fonts/NotoSansJP-Regular.otf');
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Noto Sans JP';
-  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Medium.ttf');
+  src: url(https://cdn.defectink.com/fonts/NotoSansJP-Medium.ttf);
   // src: url('@/static/fonts/NotoSansJP-Medium.woff2');
   // src: url('@/static/fonts/NotoSansJP-Medium.woff2');
   // src: url('@/static/fonts/NotoSansJP-Medium.woff') format('woff');
   // src: url('@/static/fonts/NotoSansJP-Medium.ttf');
   // src: url('@/static/fonts/NotoSansJP-Medium.otf');
   font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Noto Sans JP';
-  src: url('https://cdn.defectink.com/fonts/NotoSansJP-Bold.ttf');
+  src: url(https://cdn.defectink.com/fonts/NotoSansJP-Bold.ttf);
   // src: url('@/static/fonts/NotoSansJP-Bold.woff2');
   // src: url('@/static/fonts/NotoSansJP-Bold.woff2');
   // src: url('@/static/fonts/NotoSansJP-Bold.woff') format('woff');
   // src: url('@/static/fonts/NotoSansJP-Bold.ttf');
   // src: url('@/static/fonts/NotoSansJP-Bold.otf');
   font-weight: 700;
+  font-style: normal;
 } */
+
+@font-face {
+  font-family: UbuntuMono;
+  src: url(@/static/fonts/UbuntuMono-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Varela Round';
+  src: url(@/static/fonts/VarelaRound-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
 
 *,
 html,
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: UbuntuMono, 'Varela Round', 'PingFang SC', 'Microsoft YaHei',
+    Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
 }
 
 /* 滚动槽 */
@@ -56,6 +74,7 @@ body {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+// 卡片的阴影
 .card {
   box-shadow: 0 0 6px 0 rgb(30 45 62 / 9%);
   transition: all 0.3s ease;

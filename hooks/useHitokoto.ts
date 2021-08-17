@@ -28,7 +28,7 @@ const useHitokoto = () => {
   const fetchHitokoto = async () => {
     const data = await $axios.$get<Hitokoto>(URL, {
       params: {
-        c: 'j',
+        c: 'i',
       },
     });
     data && (hitokoto.value = data.hitokoto);
