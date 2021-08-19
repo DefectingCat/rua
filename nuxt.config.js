@@ -13,6 +13,8 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/tx-1.png' }],
   },
+  rootDir: process.cwd(),
+  buildDir: process.cwd() + '/.nuxt/',
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/css/main.scss'],
@@ -43,6 +45,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // analyze: true,
+    cache: true,
+    optimizeCSS: true,
+    // parallel: true,
     extend(config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
