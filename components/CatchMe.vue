@@ -16,7 +16,7 @@
         <div
           v-for="item of info"
           :key="item.name"
-          class="img-wrapper <sm:w-[25%] <sm:pb-4 cursor-pointer"
+          class="img-wrapper <sm:w-[25%] <sm:pb-4 cursor-pointer transition-all"
         >
           <a :href="item.url" target="_blank">
             <img :src="require(`@/static/logos/${item.logo}.svg`)" alt="" />
@@ -49,11 +49,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .catch-me {
   background-color: #f5f7f9;
-  & .img-wrapper {
-    transition: all 0.3s ease;
-  }
   & .img-wrapper:hover {
-    transition: all 0.3s ease;
     transform: scale(1.5);
   }
 }

@@ -11,7 +11,7 @@
       <div
         v-for="item of project"
         :key="item.img"
-        class="col-span-4 <sm:col-span-12"
+        class="col-span-4 <sm:col-span-12 justify-self-center"
       >
         <ProjectCard v-bind="item" />
       </div>
