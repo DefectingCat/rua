@@ -16,6 +16,8 @@ export default {
   rootDir: process.cwd(),
   buildDir: process.cwd() + '/.nuxt/',
 
+  // target: 'static',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/css/main.scss'],
 
@@ -39,7 +41,7 @@ export default {
   axios: {
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? 'https://api.defectink.com/api/rua'
+        ? 'https://api.defectink.com/rua'
         : 'http://127.0.0.1:4000', // Used as fallback if no runtime config is provided
   },
 
