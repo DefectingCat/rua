@@ -18,6 +18,10 @@ export default {
 
   // target: 'static',
 
+  router: {
+    base: process.env.NODE_ENV === 'production' ? '/rua/' : '/',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/css/main.scss'],
 
