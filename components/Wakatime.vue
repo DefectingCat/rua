@@ -25,6 +25,13 @@
       </div>
       <div class="col-span-2 <sm:hidden"></div>
     </div>
+
+    <div class="grid grid-cols-12 gap-x-8 <sm:gap-x-0 p-4">
+      <div class="col-span-2 <sm:hidden"></div>
+
+      <ColorBtn @click="refreshWaka">Refresh</ColorBtn>
+      <div class="col-span-2 <sm:hidden"></div>
+    </div>
   </div>
 </template>
 
@@ -39,18 +46,22 @@ import CardTitle from './common/CardTitle.vue';
 import backend from '@/config/backendConfig';
 import Loading from '@/components/common/Loading.vue';
 import useLazyload from '@/hooks/useLazyload';
+import ColorBtn from '@/components/common/ColorBtn.vue';
+import useAxios from '@/hooks/useAxios';
 
 export default defineComponent({
   name: 'Wakatime',
   components: {
     CardTitle,
     Loading,
+    ColorBtn,
   },
   setup() {
     const wakaRef = ref<HTMLElement>();
     const waka1 = ref('');
     const waka2 = ref('');
     const loading = ref(true);
+    const $axios = useAxios();
 
     /**
      * 加载完成时的回调
@@ -74,12 +85,28 @@ export default defineComponent({
       wakaRef.value && useLazyload(wakaRef.value, loadCallback);
     });
 
+    /**
+     * 手动更新后端 waka 图表缓存
+     */
+    const refreshWaka = async () => {
+      loading.value = true;
+      // 加载状态开始后，将 src 置空
+      waka1.value = '';
+      waka2.value = '';
+      const { data } = await $axios.post<{ status: string }>('waka/update');
+      if (data.status === 'ok') {
+        // 后端响应更新完成后，重新加载图表
+        loadCallback();
+      }
+    };
+
     return {
       wakaRef,
       loading,
       waka1,
       waka2,
       handleLoading,
+      refreshWaka,
     };
   },
 });

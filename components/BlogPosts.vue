@@ -25,12 +25,8 @@
 
     <div class="grid grid-cols-12 gap-x-8 <sm:gap-x-0 p-4">
       <div class="col-span-2 <sm:hidden"></div>
-      <button
-        class="btn card col-span-8 outline-none <sm:col-span-12"
-        @click="toBlog"
-      >
-        Read More
-      </button>
+
+      <ColorBtn @click="toBlog">Read More</ColorBtn>
       <div class="col-span-2 <sm:hidden"></div>
     </div>
   </div>
@@ -42,12 +38,14 @@ import BlogCard from './blog/BlogCard.vue';
 import CardTitle from './common/CardTitle.vue';
 import usePosts from '@/hooks/usePosts';
 import config from '@/config/backendConfig';
+import ColorBtn from '@/components/common/ColorBtn.vue';
 
 export default defineComponent({
   name: 'BlogPosts',
   components: {
     CardTitle,
     BlogCard,
+    ColorBtn,
   },
   setup() {
     const blog = ref<HTMLElement>();
